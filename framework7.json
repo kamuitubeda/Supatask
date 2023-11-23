@@ -1,0 +1,27 @@
+{
+  "cwd": "E:\\laragon\\www\\supatask",
+  "type": [
+    "web",
+    "pwa",
+    "capacitor"
+  ],
+  "name": "Supatask",
+  "pkg": "io.framework7.myapp",
+  "framework": "vue",
+  "template": "tabs",
+  "cssPreProcessor": false,
+  "bundler": "vite",
+  "capacitor": {
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "theming": {
+    "customColor": false,
+    "color": "#007aff",
+    "darkMode": false,
+    "iconFonts": true
+  },
+  "customBuild": false
+}
