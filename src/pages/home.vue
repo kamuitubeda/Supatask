@@ -132,6 +132,7 @@
 </template>
 
 <script>
+import supabase from '../js/supabase';
 import { f7 } from 'framework7-vue';
 export default {
   data() {
@@ -145,10 +146,20 @@ export default {
     },
     logout() {
       this.isLoading = true;
-      const { error } = supabase.auth.signOut();
-      this.isLoading = false;
-      f7.panel.close('left');
-      f7.views.main.router.navigate('/login/');
+      try {
+        supabase.auth.signOut();
+        // localStorage.removeItem('access_token');
+        // localStorage.removeItem('user');
+
+        this.isLoading = false;
+        f7.panel.close('left');
+        f7.views.main.router.navigate('/login/');
+      } catch (error) {
+        this.isLoading = false;
+        f7.panel.close('left');
+        f7.views.main.router.navigate('/login/');
+        console.error('Error logging out:', error);
+      }
     },
   },
 };

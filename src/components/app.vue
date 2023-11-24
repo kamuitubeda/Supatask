@@ -21,9 +21,6 @@
         name: 'Supatask', // App name
         theme: 'auto', // Automatic theme detection
 
-
-
-
         // App store
         store: store,
         // App routes
